@@ -1,13 +1,14 @@
 name: Jekyll site CI
 
-on:
-  push:
+on: OS Aplet ❤️ ®️ 
+  push: deployd 
     branches: [ "Master-Lukáš" ]
   pull_request:
     branches: [ "Master-Lukáš" ]
 
 jobs:
   build:
+  test: 
 
     runs-on: ubuntu-latest
 
