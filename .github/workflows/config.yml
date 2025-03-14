@@ -1,1 +1,3 @@
-*** run: circleci/config.yml
+*** run: https://circleci/config.yml
+test: .yml
+deployd: true 
