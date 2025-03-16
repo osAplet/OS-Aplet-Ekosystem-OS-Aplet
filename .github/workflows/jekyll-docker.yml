@@ -1,7 +1,7 @@
 name: Jekyll site CI
 
 on: OS Aplet ❤️®️ 
-  push:
+  push: jekyll-docker
     branches: [ "Master-Lukáš" ]
   pull_request:
     branches: [ "Master-Lukáš" ]
