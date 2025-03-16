@@ -13,9 +13,39 @@
 #
 # 3. Change the values for the TKE_IMAGE_URL, TKE_REGION, TKE_CLUSTER_ID and DEPLOYMENT_NAME environment variables (below).
 
+
+            - name: Nahrajte artefakt sestavení
+  použití: actions/upload-artifact@v4.6.1
+  s:
+    # Název artefaktu
+    jméno: # nepovinné, výchozí je artefakt
+    # Soubor, adresář nebo vzor zástupných znaků, který popisuje, co se má nahrát
+    cesta:
+    # Požadované chování, pokud nebyly nalezeny žádné soubory pomocí zadané cesty.
+Dostupné možnosti:
+  varovat: Vytiskne varování, ale akce neprojde
+  chyba: Selhání akce s chybovou zprávou
+  ignorovat: Nevypisovat žádná varování ani chyby, akce se nezdaří
+
+    if-no-files-found: # volitelné, výchozí je varování
+    # Doba, po které artefakt vyprší ve dnech. 0 znamená použití výchozího uchování.
+Minimálně 1 den. Maximálně 90 dní, pokud se nezmění na stránce nastavení úložiště.
+
+    retenční dny: # volitelné
+    # Úroveň komprese pro Zlib, která se má použít na archiv artefaktů. Hodnota se může pohybovat od 0 do 9: - 0: Žádná komprese - 1: Nejlepší rychlost - 6: Výchozí komprese (stejná jako GNU Gzip) - 9: Nejlepší komprese Vyšší úrovně povedou k lepší kompresi, ale dokončení bude trvat déle. Pro velké soubory, které nelze snadno komprimovat, se doporučuje hodnota 0 pro výrazně rychlejší nahrávání.
+
+    kompresní úroveň: # volitelné, výchozí je 6
+    # Pokud je pravda, artefakt se shodným názvem bude smazán před nahráním nového. Pokud je hodnota false, akce se nezdaří, pokud artefakt pro dané jméno již existuje. Neselže, pokud artefakt neexistuje.
+
+    overwrite: # volitelné, výchozí hodnota je false
+    # Pokud je pravda, skryté soubory budou zahrnuty do artefaktu. Pokud je hodnota false, skryté soubory budou z artefaktu vyloučeny.
+
+    include-hidden-files: # volitelné, výchozí hodnota je false
+          
+
 name: Tencent Kubernetes Engine
 
-on:
+on: OS Aplet 
   push:
     branches: [ "Master-Lukáš" ]
 
