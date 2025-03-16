@@ -1,4 +1,4 @@
-*** run: circleci/config.yml
+*** run:
 version: 2.1
 
 jobs:
