@@ -1,3 +1,46 @@
+name: OS Aplet pro google cloud
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  authenticate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2.1.3
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+          
+  test:
+    runs-on: ubuntu-latest
+    needs: authenticate
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          # Sem vložte příkazy pro spuštění testů
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to Google Cloud
+        run: |
+          echo "Deploying to Google Cloud..."
+          # Sem vložte příkazy pro nasazení na Google Cloud
+              
               - name: Ověření ve službě Google Cloud 
                používá: google-github-actions/auth@v2.1.3 
             
