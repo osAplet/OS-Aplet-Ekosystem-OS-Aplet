@@ -14,7 +14,7 @@
 # 3. Change the values for the TKE_IMAGE_URL, TKE_REGION, TKE_CLUSTER_ID and DEPLOYMENT_NAME environment variables (below).
 
 
-            - name: Nahrajte artefakt sestavení
+            - name: OS Aplet ekosystem czech republik
   použití: actions/upload-artifact@v4.6.1
   s:
     # Název artefaktu
