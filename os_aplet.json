@@ -1,0 +1,22 @@
+const fs = require('fs');
+
+fs.readFile('script.js', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading file:', err);
+    return;
+  }
+
+  try {
+    const scriptConfig = JSON.parse(data);
+    console.log('Script config:', scriptConfig);
+
+    // Příklad testu
+    if (scriptConfig.script && scriptConfig.showConsole) {
+      console.log('Script je aktivní a konzole je zobrazena.');
+    } else {
+      console.log('Script není aktivní nebo konzole není zobrazena.');
+    }
+  } catch (err) {
+    console.error('Error parsing JSON:', err);
+  }
+});
