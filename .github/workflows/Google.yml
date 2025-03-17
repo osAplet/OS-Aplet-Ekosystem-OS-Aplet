@@ -39,7 +39,12 @@ jobs:
       - name: Deploy to Google Cloud
         run: |
           echo "Deploying to Google Cloud..."
-          # Sem vložte příkazy pro nasazení na Google Cloud
+          # - name: Deploy to Google Cloud
+  run: |
+    echo "Deploying to Google Cloud..."
+    gcloud config set project YOUR_PROJECT_ID
+    gcloud auth activate-service-account --key-file=${{ secrets.GCP_CREDENTIALS }}
+    gcloud app deploy
               
               - name: Ověření ve službě Google Cloud 
                používá: google-github-actions/auth@v2.1.3 
