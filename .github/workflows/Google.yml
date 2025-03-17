@@ -42,7 +42,7 @@ jobs:
           # - name: Deploy to Google Cloud
   run: |
     echo "Deploying to Google Cloud..."
-    gcloud config set project YOUR_PROJECT_ID
+    gcloud config set project YOUR_PROJECT_ID os-aplet
     gcloud auth activate-service-account --key-file=${{ secrets.GCP_CREDENTIALS }}
     gcloud app deploy
               
