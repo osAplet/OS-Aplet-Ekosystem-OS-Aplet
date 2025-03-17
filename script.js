@@ -1,3 +1,4 @@
-
-script: false 
+{
+  "script": true,
   "showConsole": true
+}
