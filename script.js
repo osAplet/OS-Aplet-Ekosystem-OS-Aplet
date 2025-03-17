@@ -1,0 +1,4 @@
+{
+  "script": true,
+  "showConsole": true
+}
