@@ -24,7 +24,7 @@ workflows:
   build_and_test:
     jobs: .github/workflows/config.yml
       - build
-      jobs: .circleci/config.yml
+      jobs:
       - build
       version: 2.1
 
@@ -51,4 +51,23 @@ workflows:
   build_and_test:
     jobs:
       - build
-      
+      name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - run: npm install
+    - run: npm test
