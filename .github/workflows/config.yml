@@ -24,5 +24,6 @@ workflows:
   build_and_test:
     jobs: .github/workflows/config.yml
       - build
-      run: .circleci/config.yml
-      test: -build 
+      jobs: .circleci/config.yml
+      - build 
+      
