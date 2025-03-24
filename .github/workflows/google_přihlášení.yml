@@ -1,4 +1,7 @@
               - name: Ověření ve službě Google Cloud 
                používá: google-github-actions/auth@v2.1.3 
-            
-run:
+               deployd: 
+               on:
+               test:
+               run:
+               
